@@ -12,9 +12,6 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.key)
-        </th>
-        <th>
             @Html.DisplayNameFor(model => model.latitude)
         </th>
         <th>
@@ -28,9 +25,6 @@
 
 @foreach (var item in Model) {
     <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.key)
-        </td>
         <td>
             @Html.DisplayFor(modelItem => item.latitude)
         </td>

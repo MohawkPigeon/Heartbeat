@@ -47,7 +47,7 @@ namespace Heartbeat.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "KeyID,key,latitude,longitude,name")] Key key)
+        public ActionResult Create([Bind(Include = "KeyID,latitude,longitude,name")] Key key)
         {
             if (ModelState.IsValid)
             {
@@ -79,7 +79,7 @@ namespace Heartbeat.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "KeyID,key,latitude,longitude,name")] Key key)
+        public ActionResult Edit([Bind(Include = "KeyID,latitude,longitude,name")] Key key)
         {
             if (ModelState.IsValid)
             {

@@ -27,9 +27,6 @@ namespace Heartbeat
             GlobalConfiguration.Configuration.AddJsonpFormatter();
 
 
-            //HttpClient2 httpClient2 = new HttpClient2();
-            //HttpClient2.Main().Wait();
-
             /*
             ThreadStart childref = new ThreadStart(HttpClientHelper.Main);
             Console.WriteLine("In Main: Creating the Child thread");

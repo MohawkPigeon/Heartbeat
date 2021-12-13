@@ -13,8 +13,8 @@ namespace Heartbeat.Data
     {
         protected override void Seed(HeartbeatContext context)
         {
-
-            using (StreamReader r = new StreamReader("c:/Users/oscar/Downloads/jsonOrder.json"))
+            string filepath = string.Format("{0}\\{1}", Directory.GetCurrentDirectory(), "jsonOrder.json");
+            using (StreamReader r = new StreamReader(filepath/*"c:/Users/oscar/Downloads/jsonOrder.json"*/))
             {
                 string json = r.ReadToEnd();
                 List<Item> items = JsonConvert.DeserializeObject<List<Item>>(json);
@@ -30,7 +30,6 @@ namespace Heartbeat.Data
             orders.ForEach(o => context.Orders.Add(o));
             context.SaveChanges();
             }
-
 
             Reader reader = new Reader();
             List<Address> addresses = new List<Address>();

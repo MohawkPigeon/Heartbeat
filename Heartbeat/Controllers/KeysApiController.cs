@@ -28,7 +28,6 @@ namespace Heartbeat.Controllers
             foreach (var item in db.Keys)
             {
                 KeyDTO keyDTO = new KeyDTO();
-                keyDTO.key = item.key;
                 keyDTO.latitude = item.latitude;
                 keyDTO.longitude = item.longitude;
                 keyDTO.name = item.name;
@@ -38,32 +37,6 @@ namespace Heartbeat.Controllers
             return Ok(keyDTOs);
         }
         
-
-        // GET: api/KeysApi
-        //[EnableCors(origins: "*",headers:"*",methods:"*")]
-        /*
-        public ActionResult GetKeys(string callback)
-        {
-            empty empty = new empty();
-            List<KeyDTO> keyDTOs = new List<KeyDTO>();
-            foreach (var item in db.Keys)
-            {
-                KeyDTO keyDTO = new KeyDTO();
-                keyDTO.key = item.key;
-                keyDTO.latitude = item.latitude;
-                keyDTO.longitude = item.longitude;
-                keyDTO.name = item.name;
-                keyDTOs.Add(keyDTO);
-            }
-            empty.KeyDTOs = keyDTOs;
-
-            return new JsonpResult
-            {
-                Data = empty
-            };
-
-        }
-        */
 
         // GET: api/KeysApi/5
         [ResponseType(typeof(Key))]
