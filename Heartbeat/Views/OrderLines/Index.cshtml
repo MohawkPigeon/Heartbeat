@@ -1,0 +1,93 @@
+﻿@model IEnumerable<Heartbeat.Models.OrderLine>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.unitPrice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.orderedQuantity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.priceId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.priceUoM)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.quantityUoM)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.itemGroup)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.vatPercentage)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OrderLinePriceExclVat)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OrderLinePriceInclVat)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.discountPercentage1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.discountPercentage2)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.unitPrice)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.orderedQuantity)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.priceId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.priceUoM)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.quantityUoM)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.itemGroup)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.vatPercentage)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OrderLinePriceExclVat)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OrderLinePriceInclVat)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.discountPercentage1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.discountPercentage2)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.OrderLineID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.OrderLineID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.OrderLineID })
+        </td>
+    </tr>
+}
+
+</table>

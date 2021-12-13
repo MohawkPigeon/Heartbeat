@@ -1,0 +1,57 @@
+﻿@model IEnumerable<Heartbeat.Models.Address>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.city)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.street)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.streetNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.addressXCoordinate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.addressYCoordinate)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.city)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.street)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.streetNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.addressXCoordinate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.addressYCoordinate)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.AddressID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.AddressID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.AddressID })
+        </td>
+    </tr>
+}
+
+</table>

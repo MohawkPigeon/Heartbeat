@@ -1,0 +1,58 @@
+﻿@model Heartbeat.Models.Address
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Address</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.city)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.city)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.street)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.street)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.streetNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.streetNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.addressXCoordinate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.addressXCoordinate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.addressYCoordinate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.addressYCoordinate)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.AddressID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

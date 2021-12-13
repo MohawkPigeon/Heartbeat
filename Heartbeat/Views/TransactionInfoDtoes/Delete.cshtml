@@ -1,0 +1,72 @@
+﻿@model Heartbeat.Models.TransactionInfoDto
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>TransactionInfoDto</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.vat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.feeType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.feeType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.feeAmount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.feeAmount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cashBack)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cashBack)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.recievedAmount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.recievedAmount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.amount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.amount)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

@@ -1,0 +1,69 @@
+﻿@model IEnumerable<Heartbeat.Models.Order>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.orderNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.orderDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.totalPriceSumInclVat)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.storeCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.currency)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.deductionPercentage)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.companyId)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.orderNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.orderDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.totalPriceSumInclVat)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.storeCode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.currency)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.deductionPercentage)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.companyId)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.OrderID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.OrderID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.OrderID })
+        </td>
+    </tr>
+}
+
+</table>

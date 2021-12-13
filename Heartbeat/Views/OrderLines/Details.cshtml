@@ -1,0 +1,106 @@
+﻿@model Heartbeat.Models.OrderLine
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>OrderLine</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.unitPrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.unitPrice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.orderedQuantity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.orderedQuantity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.priceId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.priceId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.priceUoM)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.priceUoM)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.quantityUoM)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.quantityUoM)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.itemGroup)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.itemGroup)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.vatPercentage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vatPercentage)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OrderLinePriceExclVat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OrderLinePriceExclVat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OrderLinePriceInclVat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OrderLinePriceInclVat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.discountPercentage1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.discountPercentage1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.discountPercentage2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.discountPercentage2)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.OrderLineID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

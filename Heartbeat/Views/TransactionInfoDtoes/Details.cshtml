@@ -1,0 +1,66 @@
+﻿@model Heartbeat.Models.TransactionInfoDto
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>TransactionInfoDto</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.vat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.feeType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.feeType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.feeAmount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.feeAmount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cashBack)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cashBack)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.recievedAmount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.recievedAmount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.amount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.amount)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.TransactionInfoDtoID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
