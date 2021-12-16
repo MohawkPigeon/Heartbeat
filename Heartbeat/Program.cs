@@ -116,7 +116,7 @@ namespace Heartbeat
                     Metrics.CreateCounter("Adresse_95", "1"),
                     Metrics.CreateCounter("Adresse_96", "1"),
         };
-
+        private static readonly Counter heartbeat = Metrics.CreateCounter("Heartbeat", "Heartbeat Counter");
         public static void createKeysForWorldmap()
         {
             List<Key> keys = new List<Key>();
@@ -148,6 +148,11 @@ namespace Heartbeat
             {
                 counters[i].IncTo(orders[i].totalPriceSumInclVat);
 
+            }
+            while (true)
+            {
+                heartbeat.IncTo(db.Orders.Count());
+                Thread.Sleep(60000);
             }
         }
     }
