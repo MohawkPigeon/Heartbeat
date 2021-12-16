@@ -13,22 +13,13 @@ using System.IO;
 
 namespace Heartbeat
 {
-
-    public class Target
-    {
-        public string target { get; set; }
-        public List<string> datapoints { get; set;}
-    }
-
     public class Program
     {
         private static HeartbeatContext db = new HeartbeatContext();
-        private static readonly Counter TickTock =
-        Metrics.CreateCounter("sampleapp_ticks_total", "Just keeps on ticking");
 
         private static readonly List<Counter> counters = new List<Counter>
         {
-                    Metrics.CreateCounter("Adresse_1", "Size"),
+                    Metrics.CreateCounter("Adresse_1", "totalPriceSumInclVat"),
                     Metrics.CreateCounter("Adresse_2", "1"),
                     Metrics.CreateCounter("Adresse_3", "1"),
                     Metrics.CreateCounter("Adresse_4", "1"),
@@ -126,23 +117,13 @@ namespace Heartbeat
                     Metrics.CreateCounter("Adresse_96", "1"),
         };
 
-        public static void createJsonForWorldmap()
+        public static void createKeysForWorldmap()
         {
-            List<Address> addresses = new List<Address>();
-            List<Order> orders = new List<Order>();
-            List<Target> targets = new List<Target>();
             List<Key> keys = new List<Key>();
-
-            addresses = db.Addresses.ToList();
-            orders = db.Orders.ToList();
+            List<Address> addresses = db.Addresses.ToList();
 
             for (int i = 0; i < addresses.Count; i++)
             {
-                Target target = new Target();
-                target.target = addresses[i].street;
-                target.datapoints = new List<string>() {orders[i].totalPriceSumInclVat.ToString(), DateTime.Now.ToString()};
-                targets.Add(target);
-
                 Key key = new Key();
                 key.latitude = addresses[i].addressXCoordinate;
                 key.longitude = addresses[i].addressYCoordinate;
@@ -152,13 +133,8 @@ namespace Heartbeat
                 if (db.Keys.FirstOrDefault() == null)
                 db.Keys.Add(key);
             }
-
-            //string jsonTarget = JsonConvert.SerializeObject(targets);
-            //string jsonKey = JsonConvert.SerializeObject(keys);
-
             db.SaveChanges();
         }
-
 
         public static void Main()
         {
@@ -173,14 +149,6 @@ namespace Heartbeat
                 counters[i].IncTo(orders[i].totalPriceSumInclVat);
 
             }
-
-
-            while (true)
-            {
-                TickTock.Inc();
-                Thread.Sleep(TimeSpan.FromSeconds(1));
-            }
         }
-
     }
 }

@@ -33,7 +33,7 @@ namespace Heartbeat
             Thread childThread = new Thread(childref);
             childThread.Start();
             */
-            ThreadStart childref2 = new ThreadStart(Program.createJsonForWorldmap);
+            ThreadStart childref2 = new ThreadStart(Program.createKeysForWorldmap);
             Console.WriteLine("In Main: Creating the Child thread");
             Thread childThread2 = new Thread(childref2);
             childThread2.Start();
