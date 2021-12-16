@@ -279,7 +279,6 @@
     <Compile Include="Models\Address.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\Delivery.cs" />
-    <Compile Include="Models\Empty.cs" />
     <Compile Include="Models\Invoice.cs" />
     <Compile Include="Models\Key.cs" />
     <Compile Include="Models\KeyDTO.cs" />

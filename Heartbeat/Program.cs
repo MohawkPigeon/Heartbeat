@@ -17,6 +17,7 @@ namespace Heartbeat
     {
         private static HeartbeatContext db = new HeartbeatContext();
 
+
         private static readonly List<Counter> counters = new List<Counter>
         {
                     Metrics.CreateCounter("Adresse_1", "totalPriceSumInclVat"),
